@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E5281E142838CD7900CE7073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E132838CD7900CE7073 /* AppDelegate.swift */; };
 		E5281E162838CD7900CE7073 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E152838CD7900CE7073 /* SceneDelegate.swift */; };
-		E5281E182838CD7900CE7073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E172838CD7900CE7073 /* ViewController.swift */; };
+		E5281E182838CD7900CE7073 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E172838CD7900CE7073 /* NewsListViewController.swift */; };
 		E5281E1D2838CD7B00CE7073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5281E1C2838CD7B00CE7073 /* Assets.xcassets */; };
 		E5281E202838CD7B00CE7073 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5281E1E2838CD7B00CE7073 /* LaunchScreen.storyboard */; };
 		E5281E2B2838CD7B00CE7073 /* KeywordNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E2A2838CD7B00CE7073 /* KeywordNewsTests.swift */; };
@@ -17,6 +17,8 @@
 		E5281E372838CD7B00CE7073 /* KeywordNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E362838CD7B00CE7073 /* KeywordNewsUITestsLaunchTests.swift */; };
 		E5281E452838CE7A00CE7073 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5281E442838CE7A00CE7073 /* SnapKit */; };
 		E5281E4B2838CF2600CE7073 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E5281E4A2838CF2600CE7073 /* Alamofire */; };
+		E5281E4E2838D9F300CE7073 /* NewsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E4D2838D9F300CE7073 /* NewsListPresenter.swift */; };
+		E5281E512838E1DE00CE7073 /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E502838E1DE00CE7073 /* NewsListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 		E5281E102838CD7900CE7073 /* KeywordNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeywordNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5281E132838CD7900CE7073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5281E152838CD7900CE7073 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5281E172838CD7900CE7073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5281E172838CD7900CE7073 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		E5281E1C2838CD7B00CE7073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5281E1F2838CD7B00CE7073 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5281E212838CD7B00CE7073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		E5281E302838CD7B00CE7073 /* KeywordNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeywordNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5281E342838CD7B00CE7073 /* KeywordNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordNewsUITests.swift; sourceTree = "<group>"; };
 		E5281E362838CD7B00CE7073 /* KeywordNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5281E4D2838D9F300CE7073 /* NewsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListPresenter.swift; sourceTree = "<group>"; };
+		E5281E502838E1DE00CE7073 /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,7 @@
 			children = (
 				E5281E132838CD7900CE7073 /* AppDelegate.swift */,
 				E5281E152838CD7900CE7073 /* SceneDelegate.swift */,
-				E5281E172838CD7900CE7073 /* ViewController.swift */,
+				E5281E4C2838D9D400CE7073 /* Scenes */,
 				E5281E1C2838CD7B00CE7073 /* Assets.xcassets */,
 				E5281E1E2838CD7B00CE7073 /* LaunchScreen.storyboard */,
 				E5281E212838CD7B00CE7073 /* Info.plist */,
@@ -134,6 +138,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5281E4C2838D9D400CE7073 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E5281E4F2838DA0500CE7073 /* NewsList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E5281E4F2838DA0500CE7073 /* NewsList */ = {
+			isa = PBXGroup;
+			children = (
+				E5281E172838CD7900CE7073 /* NewsListViewController.swift */,
+				E5281E4D2838D9F300CE7073 /* NewsListPresenter.swift */,
+				E5281E502838E1DE00CE7073 /* NewsListTableViewCell.swift */,
+			);
+			path = NewsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5281E182838CD7900CE7073 /* ViewController.swift in Sources */,
+				E5281E182838CD7900CE7073 /* NewsListViewController.swift in Sources */,
+				E5281E512838E1DE00CE7073 /* NewsListTableViewCell.swift in Sources */,
 				E5281E142838CD7900CE7073 /* AppDelegate.swift in Sources */,
 				E5281E162838CD7900CE7073 /* SceneDelegate.swift in Sources */,
+				E5281E4E2838D9F300CE7073 /* NewsListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
