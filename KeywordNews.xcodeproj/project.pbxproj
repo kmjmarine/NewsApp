@@ -27,6 +27,7 @@
 		E5281E512838E1DE00CE7073 /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E502838E1DE00CE7073 /* NewsListTableViewCell.swift */; };
 		E5281E53283A28C100CE7073 /* NewsListTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E52283A28C100CE7073 /* NewsListTableViewHeaderView.swift */; };
 		E5281E57283B356B00CE7073 /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5281E56283B356B00CE7073 /* NewsWebViewController.swift */; };
+		E54A7AED284094C0006FB8D9 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A7AEC284094C0006FB8D9 /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		E5281E502838E1DE00CE7073 /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		E5281E52283A28C100CE7073 /* NewsListTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewHeaderView.swift; sourceTree = "<group>"; };
 		E5281E56283B356B00CE7073 /* NewsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
+		E54A7AEC284094C0006FB8D9 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		ECBFC317A8C44271F1EC0A48 /* Pods_KeywordNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeywordNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				E5281E1C2838CD7B00CE7073 /* Assets.xcassets */,
 				E5281E1E2838CD7B00CE7073 /* LaunchScreen.storyboard */,
 				E5281E212838CD7B00CE7073 /* Info.plist */,
+				E54A7AEC284094C0006FB8D9 /* String+.swift */,
 			);
 			path = KeywordNews;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				E50F7F05283C8B3300BC0349 /* NewsSearchManager.swift in Sources */,
 				E50F7F02283C888000BC0349 /* NewsResponseModel.swift in Sources */,
 				E5281E142838CD7900CE7073 /* AppDelegate.swift in Sources */,
+				E54A7AED284094C0006FB8D9 /* String+.swift in Sources */,
 				E5281E57283B356B00CE7073 /* NewsWebViewController.swift in Sources */,
 				E5281E162838CD7900CE7073 /* SceneDelegate.swift in Sources */,
 				E5281E4E2838D9F300CE7073 /* NewsListPresenter.swift in Sources */,

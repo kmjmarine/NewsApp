@@ -12,19 +12,31 @@ protocol NewsListProtocol: AnyObject {
     func setupNavigationBar()
     func setupLayout()
     func endRefreshing()
-    func moveToNewsWebViewController()
+    func moveToNewsWebViewController(with news: News)
+    func reloadTableView()
 }
 
 final class NewsListPresenter: NSObject {
     private weak var viewController: NewsListProtocol?
+    private let newsSearchManager: NewsSearchManagerProtocol
     
-    init(viewController: NewsListProtocol) {
+    private var currentKeyword = "아이폰"
+    private var currentPage: Int = 0
+    private let displayCount: Int = 20
+    
+    private var newsList: [News] = [ ]
+    
+    init(viewController: NewsListProtocol,
+         newsSearchManager: NewsSearchManagerProtocol = NewsSearchManager()
+    ) {
         self.viewController = viewController
+        self.newsSearchManager = newsSearchManager
     }
     
     func viewDidLoad() {
         viewController?.setupNavigationBar()
         viewController?.setupLayout()
+        requestNewsList()
     }
     
     func didCalledRefresh() {
@@ -34,19 +46,32 @@ final class NewsListPresenter: NSObject {
 
 extension NewsListPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewController?.moveToNewsWebViewController()
+        let news = newsList[indexPath.row]
+        viewController?.moveToNewsWebViewController(with: news)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let currentRow = indexPath.row
+        
+        guard (currentRow % 20) == displayCount - 3 && (currentRow / displayCount) == (currentPage - 1)
+        else {
+            return
+        }
+        
+        requestNewsList()
     }
 }
 
 extension NewsListPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        15
+        newsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsListTableViewCell.identifier, for: indexPath) as? NewsListTableViewCell
         
-        cell?.setup()
+        let news = newsList[indexPath.row]
+        cell?.setup(news: news)
         
         return cell ?? UITableViewCell()
     }
@@ -56,5 +81,19 @@ extension NewsListPresenter: UITableViewDataSource {
         header?.setup()
         
         return header
+    }
+}
+
+private extension NewsListPresenter {
+    func requestNewsList() {
+        newsSearchManager.request(
+            from: currentKeyword,
+            start: (currentPage * displayCount) + 1,
+            display: displayCount
+        ) { [weak self] newValue in
+                self?.newsList += newValue
+                self?.currentPage += 1
+                self?.viewController?.reloadTableView()
+            }
     }
 }
