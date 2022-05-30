@@ -24,7 +24,7 @@ final class NewsListPresenter: NSObject {
     private var currentPage: Int = 0
     private let displayCount: Int = 20
     
-    private let tags: [String] = ["ducati", "scrambler", "night shift", "kawasaki", "honda", "bmw s1000rr", "bmw r-ninet", "triumph", "suzuki"]
+    private let tags: [String] = ["ducati", "bmw", "ktm", "kawasaki", "honda", "suzuki", "yamaha", "SYM", "kymco", "triumph", "vespa", "aprilla"]
     private var newsList: [News] = [ ]
     
     init(viewController: NewsListProtocol,
